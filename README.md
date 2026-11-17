@@ -4,7 +4,7 @@
 
 > 与 EXE 全功能版并存、互不干扰：独立数据目录 `.openclaw-lite-home`、独立端口 18795、只管理本程序亲手启动的网关进程。
 >
-> EXE 全功能版：[openclaw-console-desktop](https://github.com/REPLACE_ME/openclaw-console-desktop)
+> EXE 全功能版：[openclaw-console-desktop](https://github.com/a2109246162-tech/openclaw-console-desktop)
 
 ## 为什么不是纯 UWP
 
