@@ -1,0 +1,101 @@
+{
+  "gateway": {
+    "mode": "local",
+    "auth": {
+      "mode": "token",
+      "token": "REPLACE_WITH_YOUR_GATEWAY_TOKEN"
+    }
+  },
+  "plugins": {
+    "allow": [
+      "openclaw-weixin"
+    ],
+    "entries": {
+      "openclaw-weixin": {
+        "enabled": true
+      }
+    }
+  },
+  "channels": {},
+  "models": {
+    "mode": "merge",
+    "providers": {
+      "ark": {
+        "baseUrl": "https://ark.cn-beijing.volces.com/api/v3",
+        "apiKey": "ark-REPLACE_WITH_YOUR_API_KEY",
+        "api": "openai-completions",
+        "models": [
+          {
+            "id": "deepseek-v4-1-flash-261017",
+            "name": "DeepSeek V4.1 Flash (火山方舟)",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "contextWindow": 1048576,
+            "maxTokens": 393216,
+            "compat": {
+              "supportsUsageInStreaming": true
+            }
+          }
+        ]
+      },
+      "ark-doubao": {
+        "baseUrl": "https://ark.cn-beijing.volces.com/api/v3",
+        "apiKey": "ark-REPLACE_WITH_YOUR_API_KEY",
+        "api": "openai-completions",
+        "models": [
+          {
+            "id": "doubao-seed-evolving",
+            "name": "Doubao Seed Evolving (火山方舟)",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "contextWindow": 262144,
+            "maxTokens": 16384,
+            "compat": {
+              "supportsUsageInStreaming": true
+            }
+          }
+        ]
+      },
+      "deepseek": {
+        "baseUrl": "https://api.deepseek.com/v1",
+        "apiKey": "sk-REPLACE_WITH_YOUR_API_KEY",
+        "api": "openai-completions",
+        "models": [
+          {
+            "id": "deepseek-flash",
+            "name": "DeepSeek V4.1 Flash",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "contextWindow": 1048576,
+            "maxTokens": 393216,
+            "compat": {
+              "supportsUsageInStreaming": true
+            }
+          }
+        ]
+      }
+    }
+  },
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "ark-doubao/doubao-seed-evolving",
+        "fallbacks": [
+          "deepseek/deepseek-flash",
+          "ark/deepseek-v4-1-flash-261017"
+        ]
+      },
+      "models": {
+        "ark-doubao/doubao-seed-evolving": {},
+        "deepseek/deepseek-flash": {},
+        "ark/deepseek-v4-1-flash-261017": {}
+      }
+    }
+  }
+}

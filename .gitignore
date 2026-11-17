@@ -1,0 +1,35 @@
+# Keys / certificates / personal data
+*.pfx
+*.key
+*.cer
+*.csr
+*.p12
+*.srl
+openclaw.json
+preset-config.local.json
+*.log
+
+# Build outputs
+build/
+node_modules/
+dist/
+*.exe
+*.msix
+*.appx
+*.appxbundle
+vc_redist.x64.exe
+*.nupkg
+
+# Runtime / third-party bundles
+runtime/
+plugins/
+tools/extracted/
+
+# Test artifacts
+*.png.txt
+e2e-run.log
+last-run.log
+
+# OS
+Th.db
+.DS_Store
